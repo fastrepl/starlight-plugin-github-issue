@@ -1,9 +1,15 @@
 # Starlight Plugin for GitHub Issue
 
+## What is this?
+
+This plugin adds a `Give us feedback` button in the `TOC` section.
+
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="/images/light.svg">
-  <img alt="example" src="/images/dark.svg" width="50%" height="50%">
+  <source media="(prefers-color-scheme: light)" srcset="/images/light.png">
+  <img alt="example" src="/images/dark.png" width="200px">
 </picture>
+
+Clicking the button will open a GitHub issue creation page with the body containing the URL of the file on that page.
 
 ## Installation
 
