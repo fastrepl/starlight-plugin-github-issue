@@ -1,0 +1,53 @@
+---
+import type { Props } from "@astrojs/starlight/props";
+import Default from "@astrojs/starlight/components/TableOfContents.astro";
+
+const { editUrl } = Astro.props;
+
+const regex = /^(https:\/\/github\.com\/[^\/]+\/[^\/]+)/;
+const [base] = editUrl?.href.match(regex) ?? [];
+---
+
+<Default {...Astro.props}>
+  <slot />
+</Default>
+
+<button
+  id="feedback"
+  type="button"
+  data-base={base}
+  data-path={editUrl?.pathname}
+>
+  Give us feedback
+</button>
+
+<script>
+  const button = document.getElementById("feedback");
+  if (button) {
+    const { base, path } = button.dataset;
+    const body = encodeURIComponent(`${base}${path}`);
+    const url = `${base}/issues/new?body=${body}`;
+    button.addEventListener("click", () => window.open(url, "_blank"));
+  }
+</script>
+
+<style>
+  button#feedback {
+    margin-top: 0.5rem;
+    border: 1px solid var(--sl-color-gray-1);
+    border-radius: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: var(--sl-text-xs);
+    line-height: calc(1 / var(--theme-text-xs));
+    padding: 0.25rem 0.75rem;
+  }
+
+  button#feedback:hover,
+  button#feedback:focus {
+    background-color: var(--sl-color-gray-6);
+  }
+  button#feedback:focus:not(:focus-visible) {
+    background-color: transparent;
+  }
+</style>

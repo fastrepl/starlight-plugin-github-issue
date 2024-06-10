@@ -1,0 +1,23 @@
+{
+  "name": "starlight-plugin-github-issue",
+  "version": "1.0.5",
+  "description": "starlight plugin",
+  "author": "yujonglee <yujonglee@fastrepl.com>",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "./index.js",
+    "./toc.astro"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./toc.astro": "./toc.astro"
+  },
+  "peerDependencies": {
+    "@astrojs/starlight": ">=0.14.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.1",
+    "prettier-plugin-astro": "^0.14.0"
+  }
+}
