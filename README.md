@@ -9,7 +9,7 @@ This plugin adds a `Give us feedback` button in the `TOC` section.
   <img alt="example" src="/images/dark.png" width="200px">
 </picture>
 
-Clicking the button will open a GitHub issue creation page with the body containing the URL of the file on that page.
+Clicking the button will open a GitHub issue creation page with the body containing the URL of the file of that page.
 
 ## Installation
 
